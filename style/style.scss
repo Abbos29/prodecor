@@ -13,6 +13,26 @@ $colorBlueLight: #299ab3;
 }
 html {
     scroll-behavior: smooth;
+
+    /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #d2d1d1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 .container {
@@ -35,8 +55,14 @@ body {
     color: $colorMain;
     line-height: 1.2;
 
-    &:has(.header__menu.active) {
+    &:has(.header__menu.active, .modal.active) {
         overflow: hidden;
+    }
+}
+
+#event {
+    .catalog__card-price {
+        display: none;
     }
 }
 
@@ -329,10 +355,20 @@ body {
         overflow: hidden;
         border-radius: 15px;
 
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
         img {
             width: 100%;
             height: 300px;
             object-fit: cover;
+        }
+
+        h3 {
+            &::first-letter {
+                text-transform: uppercase;
+            }
         }
     }
 
@@ -342,12 +378,17 @@ body {
         display: flex;
         flex-direction: column;
         gap: 8px;
+        // justify-content: space-between;
+
+        margin-top: auto;
 
         button {
             background-color: $colorBlueLight;
             padding: 12px;
             color: #fff;
             border-radius: 12px;
+
+            // margin-top: auto;
         }
     }
 
@@ -496,4 +537,91 @@ body {
     }
 }
 .container {
+}
+
+// MODAL
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    z-index: 6;
+
+    display: grid;
+    place-items: center;
+
+    // display: none;
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.4s ease;
+
+    &.active {
+        display: grid;
+        opacity: 1;
+        visibility: visible;
+    }
+    /* .modal__wrapper */
+    &__wrapper {
+        // padding: 70px;
+        padding: clamp(1.563rem, 0.22rem + 5.11vw, 4.375rem);
+
+        max-width: 700px;
+        width: 95%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        position: relative;
+
+        // font-size: 16px;
+        font-size: clamp(0.875rem, 0.815rem + 0.23vw, 1rem);
+
+        h3 {
+            // font-size: 45px;
+            font-size: clamp(2rem, 1.612rem + 1.48vw, 2.813rem);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            margin-top: 15px;
+
+            p {
+                margin: 15px 0;
+            }
+        }
+
+        input {
+            padding: 12px 22px;
+            background-color: #f3f2f7;
+            border-radius: 12px;
+        }
+        button {
+            background-color: $colorBlueLight;
+            padding: 12px;
+            color: #fff;
+            border-radius: 12px;
+        }
+    }
+    /* .modal__close */
+    &__close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 20px;
+        cursor: pointer;
+
+        @media (max-width: 480px) {
+            top: 15px;
+            right: 15px;
+        }
+    }
 }
