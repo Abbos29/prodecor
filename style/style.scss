@@ -11,6 +11,9 @@ $colorBlueLight: #299ab3;
 * {
     font-family: "Roboto", sans-serif;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 .container {
     max-width: 1300px;
@@ -223,7 +226,7 @@ body {
             line-height: 1.2;
         }
 
-        > button {
+        a {
             margin-top: auto;
             color: $colorBlueLight;
             padding: 11px 26px;
@@ -457,7 +460,6 @@ body {
 
 // FOOTER
 .footer {
-
     padding: 50px 0 80px;
     /* .footer__wrapper */
     &__wrapper {
@@ -466,12 +468,10 @@ body {
         gap: 40px;
 
         @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-            
+            grid-template-columns: repeat(2, 1fr);
         }
 
         @media (max-width: 480px) {
-            
             grid-template-columns: 1fr;
         }
     }

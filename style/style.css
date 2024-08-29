@@ -2,6 +2,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: 1300px;
   margin: 0 auto;
@@ -191,7 +195,7 @@ body:has(.header__menu.active) {
   font-size: clamp(0.75rem, -0.333rem + 2.26vw, 1.5rem);
   line-height: 1.2;
 }
-.hero__box > button {
+.hero__box a {
   margin-top: auto;
   color: #299ab3;
   padding: 11px 26px;
@@ -204,18 +208,18 @@ body:has(.header__menu.active) {
   transition: all 0.3s;
 }
 @media (max-width: 480px) {
-  .hero__box > button svg {
+  .hero__box a svg {
     display: none;
   }
 }
-.hero__box > button svg path {
+.hero__box a svg path {
   transition: all 0.3s;
 }
-.hero__box > button:hover {
+.hero__box a:hover {
   background-color: #299ab3;
   color: #fff;
 }
-.hero__box > button:hover svg path {
+.hero__box a:hover svg path {
   fill: #fff;
 }
 .hero__img {
