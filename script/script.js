@@ -75,7 +75,7 @@ forms.forEach(form => {
             .then(response => response.json())
             .then(data => {
                 if (data.ok) {
-                    alert('Сообщение отправлено!');
+                    alert('Ваша заявка отправлена. Мы свяжемся с Вами в ближайшее время!');
                     location.reload()
                 } else {
                     alert('Ошибка при отправке сообщения.');
