@@ -120,6 +120,16 @@ body:has(.header__menu.active, .modal.active) {
     display: none;
   }
 }
+.header__btns.mobile {
+  display: none;
+  margin-top: 10px;
+  justify-content: center;
+}
+@media (max-width: 480px) {
+  .header__btns.mobile {
+    display: flex;
+  }
+}
 .header__btns > :first-child {
   background-color: #299ab3;
   font-size: 14px;
@@ -166,6 +176,11 @@ body:has(.header__menu.active, .modal.active) {
 }
 .hero__wrapper.form__wrapper {
   grid-template-columns: 1fr 1.3fr;
+}
+@media (max-width: 480px) {
+  .hero__wrapper.form__wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 @media (max-width: 480px) {
   .hero__wrapper {
@@ -297,6 +312,12 @@ body:has(.header__menu.active, .modal.active) {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
 }
+@media (max-width: 480px) {
+  .catalog__wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
 .catalog__card {
   background-color: #fff;
   overflow: hidden;
@@ -310,6 +331,11 @@ body:has(.header__menu.active, .modal.active) {
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 480px) {
+  .catalog__card img {
+    height: 200px;
+  }
 }
 .catalog__card h3::first-letter {
   text-transform: uppercase;
@@ -331,11 +357,17 @@ body:has(.header__menu.active, .modal.active) {
   display: flex;
   gap: 12px;
 }
+@media (max-width: 480px) {
+  .catalog__card-price {
+    flex-direction: column-reverse;
+  }
+}
 .catalog__card-price s {
   font-size: 14px;
 }
 .catalog__card-price p {
   font-size: 16px;
+  font-weight: 500;
 }
 
 .info {
@@ -453,6 +485,11 @@ body:has(.header__menu.active, .modal.active) {
 .footer__logo {
   max-width: 150px;
   width: 100%;
+}
+@media (max-width: 480px) {
+  .footer__logo {
+    max-width: 100px;
+  }
 }
 
 .modal {
