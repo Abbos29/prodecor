@@ -179,7 +179,8 @@ body:has(.header__menu.active, .modal.active) {
 }
 @media (max-width: 480px) {
   .hero__wrapper.form__wrapper {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 @media (max-width: 480px) {

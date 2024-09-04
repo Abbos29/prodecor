@@ -197,7 +197,9 @@ body {
             grid-template-columns: 1fr 1.3fr;
 
             @media (max-width: 480px) {
-                grid-template-columns: 1fr;
+                // grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column-reverse;
             }
         }
 
