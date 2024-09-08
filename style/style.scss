@@ -263,7 +263,7 @@ body {
             // font-size: 24px;
             margin-bottom: auto;
 
-            font-size: clamp(0.75rem, -0.333rem + 2.26vw, 1.5rem);
+            font-size: clamp(0.65rem, -0.333rem + 2.26vw, 1.5rem);
             line-height: 1.2;
         }
 
@@ -656,5 +656,9 @@ body {
             top: 15px;
             right: 15px;
         }
+    }
+
+    &__btn {
+        cursor: pointer;
     }
 }
