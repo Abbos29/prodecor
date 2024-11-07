@@ -1,9 +1,16 @@
 const btn = document.querySelector('.header__burger')
 const menu = document.querySelector('.header__menu')
+const links = document.querySelectorAll('.header__menu a')
 
 
 btn.addEventListener('click', () => {
     menu.classList.toggle('active')
+})
+
+links.forEach(el => {
+    el.addEventListener('click', () => {
+        menu.classList.remove('active')
+    })
 })
 
 
